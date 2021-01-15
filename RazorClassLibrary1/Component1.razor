@@ -1,0 +1,21 @@
+﻿<div class="my-component">
+    This Blazor component is defined in the <strong>RazorClassLibrary1</strong> package.
+    <br />
+    <pre>@message</pre>
+</div>
+
+@code{
+    string message;
+
+    protected override void OnInitialized()
+    {
+        message = "OnInitialized breakpoint not hit";
+
+        if (true)
+        {
+            message += Environment.NewLine + "Neither is the if statement breakpoint hit";
+        }
+
+        base.OnInitialized();
+    }
+}
